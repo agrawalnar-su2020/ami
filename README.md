@@ -1,5 +1,6 @@
 # AMI
 
+
 ## CSYE 6225 - Summer 2020
 
 ## Building Custom AMI using Packer
