@@ -4,7 +4,7 @@
         "aws_secret_key": "",
         "aws_region": "",
         "subnet_id": "",
-        "source_ami": "ami-068663a3c619dd892",
+        "source_ami": "ami-0ac80df6eff0e70b5",
         "ssh_username":"ubuntu",
         "ami_users": "213094423378"
     },
@@ -40,7 +40,14 @@
             "inline": [
             	"sleep 30",
                 "sudo apt-get update",
-                "sudo apt-get install default-jdk -y"
+                "sudo apt-get install openjdk-8-jdk -y",
+                "sudo apt-get update",
+                "sudo apt-get install ruby -y",
+                "sudo apt-get install wget",
+                "cd /home/ubuntu",
+                "wget https://aws-codedeploy-{{user `aws_region`}}.s3.{{user `aws_region`}}.amazonaws.com/latest/install",
+                "chmod +x ./install",
+                "sudo ./install auto"
             ]
         }
     ]
